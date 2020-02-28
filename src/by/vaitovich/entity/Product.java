@@ -5,9 +5,9 @@ import java.util.Objects;
 
 public class Product {
 
+    private int id;
     private int price;
     private int oldPrice;
-    private String id;
     private String title;
     private String code;
     private String characteristics;
@@ -15,6 +15,20 @@ public class Product {
     private Date datetime;
     private String description;
 
+    public Product() {
+    }
+
+    public Product(int id, int price, int oldPrice, String title, String code, String characteristics, String brand, Date datetime, String description) {
+        this.id = id;
+        this.price = price;
+        this.oldPrice = oldPrice;
+        this.title = title;
+        this.code = code;
+        this.characteristics = characteristics;
+        this.brand = brand;
+        this.datetime = datetime;
+        this.description = description;
+    }
 
     public int getPrice() {
         return price;
@@ -32,11 +46,11 @@ public class Product {
         this.oldPrice = oldPrice;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 

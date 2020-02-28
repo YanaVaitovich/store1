@@ -1,20 +1,11 @@
 package by.vaitovich.entity;
-import by.vaitovich.dao.UserDao;
 
 import java.util.Date;
 import java.util.Objects;
 
 
-public class User implements UserDao {
-    @Override
-    public void findAll(User user) {
+public class User  {
 
-    }
-
-    @Override
-    public void save(User user) {
-
-    }
 
     private int id;
     private String surname;
@@ -29,6 +20,18 @@ public class User implements UserDao {
     private boolean inBlackList;
 
     public User() {
+    }
+
+    public User(int id, String surname, String name, String patronymic, String address, String mail, String phone, String password, Date registrationDate) {
+        this.id = id;
+        this.surname = surname;
+        this.name = name;
+        this.patronymic = patronymic;
+        this.address = address;
+        this.mail = mail;
+        this.phone = phone;
+        this.password = password;
+        this.registrationDate = registrationDate;
     }
 
     public User(int id, String surname, String name, String patronymic, String address, String mail, String phone, String password, Date registrationDate, Role role, boolean inBlackList) {

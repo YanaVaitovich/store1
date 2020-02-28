@@ -1,14 +1,28 @@
 package by.vaitovich.dao;
-
 import by.vaitovich.entity.Order;
-import by.vaitovich.entity.User;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.List;
 
-public class OrderDaoImpl {
+public class OrderDaoImpl implements OrderDao {
 
+    private static OrderDaoImpl INSTANCE;
+    private OrderDaoImpl(){}
+    public static OrderDaoImpl getInstance() {
+        if (INSTANCE == null) {
+            INSTANCE = new OrderDaoImpl();
+        }
+        return INSTANCE;
+    }
+
+
+    @Override
+    public void saveOrder(Order order) {}
+
+     @Override
+    public void findOrders() {}
+
+    @Override
+    public void updateOrders(Order Order) {}
+
+    @Override
+    public void deleteOrders(int id) {}
 }
