@@ -1,11 +1,22 @@
 package by.vaitovich.entity;
+import by.vaitovich.dao.UserDao;
+
 import java.util.Date;
 import java.util.Objects;
 
 
-public class User {
+public class User implements UserDao {
+    @Override
+    public void findAll(User user) {
 
-private String id;
+    }
+
+    @Override
+    public void save(User user) {
+
+    }
+
+    private int id;
     private String surname;
     private String name;
     private String patronymic;
@@ -17,11 +28,34 @@ private String id;
     private Role role;
     private boolean inBlackList;
 
-    public String getId() {
+    public User() {
+    }
+
+    public User(int id, String surname, String name, String patronymic, String address, String mail, String phone, String password, Date registrationDate, Role role, boolean inBlackList) {
+        this.id = id;
+        this.surname = surname;
+        this.name = name;
+        this.patronymic = patronymic;
+        this.address = address;
+        this.mail = mail;
+        this.phone = phone;
+        this.password = password;
+        this.registrationDate = registrationDate;
+        this.role = role;
+        this.inBlackList = inBlackList;
+    }
+
+    public User(int id, String surname, String name) {
+        this.id = id;
+        this.surname = surname;
+        this.name = name;
+    }
+
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -110,8 +144,8 @@ private String id;
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return inBlackList == user.inBlackList &&
-                Objects.equals(id, user.id) &&
+        return id == user.id &&
+                inBlackList == user.inBlackList &&
                 Objects.equals(surname, user.surname) &&
                 Objects.equals(name, user.name) &&
                 Objects.equals(patronymic, user.patronymic) &&
@@ -131,7 +165,7 @@ private String id;
     @Override
     public String toString() {
         return "User{" +
-                "id='" + id + '\'' +
+                "id=" + id +
                 ", surname='" + surname + '\'' +
                 ", name='" + name + '\'' +
                 ", patronymic='" + patronymic + '\'' +
@@ -145,3 +179,7 @@ private String id;
                 '}';
     }
 }
+
+
+
+

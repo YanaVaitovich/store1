@@ -12,8 +12,7 @@ public class Order {
     private String address;
     private String comment;
     private Status status;
-    private String cansel;
-    private String cause;
+
 
     public String getId() {
         return id;
@@ -71,23 +70,7 @@ public class Order {
         this.status = status;
     }
 
-    public String getCansel() {
-        return cansel;
-    }
-
-    public void setCansel(String cansel) {
-        this.cansel = cansel;
-    }
-
-    public String getCause() {
-        return cause;
-    }
-
-    public void setCause(String cause) {
-        this.cause = cause;
-    }
-
-    @Override
+       @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -98,14 +81,12 @@ public class Order {
                 Objects.equals(phone, order.phone) &&
                 Objects.equals(address, order.address) &&
                 Objects.equals(comment, order.comment) &&
-                status == order.status &&
-                Objects.equals(cansel, order.cansel) &&
-                Objects.equals(cause, order.cause);
+                status == order.status;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, products, user, phone, address, comment, status, cansel, cause);
+        return Objects.hash(id, products, user, phone, address, comment, status);
     }
 
     @Override
@@ -118,8 +99,6 @@ public class Order {
                 ", address='" + address + '\'' +
                 ", comment='" + comment + '\'' +
                 ", status=" + status +
-                ", cansel='" + cansel + '\'' +
-                ", cause='" + cause + '\'' +
-                '}';
+                               '}';
     }
 }
