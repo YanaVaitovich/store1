@@ -6,8 +6,8 @@ import java.util.Objects;
 public class Product {
 
     private int id;
-    private int price;
-    private int oldPrice;
+    private double price;
+    private double oldPrice;
     private String title;
     private String code;
     private String characteristics;
@@ -30,19 +30,19 @@ public class Product {
         this.description = description;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
-    public int getOldPrice() {
+    public double getOldPrice() {
         return oldPrice;
     }
 
-    public void setOldPrice(int oldPrice) {
+    public void setOldPrice(double oldPrice) {
         this.oldPrice = oldPrice;
     }
 

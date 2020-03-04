@@ -30,8 +30,8 @@ public class ProductDaoImpl implements ProductDao{
         try (Connection connection = ConnectionManager.getConnection()) {
             PreparedStatement preparedStatement = connection.prepareStatement(SAVE_PRODUCT_QUERY);
 
-            preparedStatement.setInt(1, product.getPrice());
-            preparedStatement.setInt(2, product.getOldPrice());
+            preparedStatement.setDouble(1, product.getPrice());
+            preparedStatement.setDouble(2, product.getOldPrice());
             preparedStatement.setString(3, product.getTitle());
             preparedStatement.setString(4, product.getCode());
             preparedStatement.setString(5, product.getCharacteristics());
@@ -69,8 +69,8 @@ public class ProductDaoImpl implements ProductDao{
         try (Connection connection = ConnectionManager.getConnection()) {
             PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_PRODUCT_QUERY);
 
-            preparedStatement.setInt(1, product.getPrice());
-            preparedStatement.setInt(2, product.getOldPrice());
+            preparedStatement.setDouble(1, product.getPrice());
+            preparedStatement.setDouble(2, product.getOldPrice());
             preparedStatement.setString(3, product.getTitle());
             preparedStatement.setString(4, product.getCode());
             preparedStatement.setString(5, product.getCharacteristics());
